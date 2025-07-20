@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SAYANG TYAA</title>
+
+  <!-- INTERNAL CSS -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #ffe0e9);
+      color: #444;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+      0%, 100% {transform: scale(1);}
+      50% {transform: scale(1.1);}
+    }
+
+    @keyframes floatHeart {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(255, 153, 204, 0.3);
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Arial', cursive;
+      font-size: 42px;
+      text-align: center;
+      color: #cc3366;
+      margin-bottom: 10px;
+    }
+
+    .penulis, .tanggal {
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 25px 0;
+      text-align: justify;
+    }
+
+    .love {
+      text-align: center;
+      font-size: 40px;
+      color: #ff6699;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 24px;
+      color: #ff6699;
+      animation: floatHeart 5s linear infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Container Artikel -->
+  <div class="container">
+    <h1>Sayang Tyaa</h1>
+    <div class="penulis">Dari: Siapa yaa wkwk</div>
+    <div class="tanggal"></div>
+
+    <p>
+      Haii sayang, buset sayang gatuh wkwk.
+      Aku mau bilang terimasih banget sama kamu ya udah mau hadir di hidup aku sekarang hehe, kalau gaada kamu aku gatau harus gimana lagi.
+      Dan semoga kita gapernah asing ya sayang? aku sih gamau pake bangetttt wkwk.
+    </p>
+
+    <p>
+      Aku juga ngga paham kenapa kok aku bisa kecintaan banget sama kamu wkwk, mungkin karna kamu se menarik itu di mata aku ya? wkwk
+      dari senyuman kamu aja udah buat aku bingung sendiri kayak, kenapa kamu bisa selucu dan gemesin gitu sihh.
+    </p>
+
+    <p>
+      Kalau kamu nanya seberapa sayang aku ke kamu, itu udah gabisa di ukur sayang, artinya aku sayang banget sama kamu.
+      Gimana ga sayang coba, orang tiap hari selalu ada tingkah randomnya yang bikin kamu tambah gemesin.
+      Dan semoga kamu juga sayang sama aku, eh harus dongg wkwk.
+    </p>
+
+    <p>
+      Kalau kamu udah baca semua ini tolong jangan tinggalin aku ya cantik, aku udah gamau mengenal cinta lagi.
+      Dan aku harap meskipun aku bukan cinta pertama kamu, aku harap aku bisa jadi cinta terakhir kamu hehe.
+    </p>
+
+    <div class="love">💗</div>
+  </div>
+
+  <!-- Footer -->
+  <footer></footer>
+
+  <!-- INTERNAL JAVASCRIPT: Falling Hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
